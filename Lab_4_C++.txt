@@ -1,31 +1,35 @@
+//
+//Ієрархія класів плоских фігур,та їх опис алгоритмічною мовою C++
+//
+
 #include "stdafx.h"
 #include <iostream>
 
 using namespace std;
 
 class Figurs{
-public:
-virtual double Square() {return 0;}
-virtual double Perimeter(){return 0;}
-virtual int Get() {return 0;}
-virtual double Long() {return 0;}
+	public:
+	virtual double Square() {return 0;}
+	virtual double Perimeter(){return 0;}
+	virtual int Get() {return 0;}
+	virtual double Long() {return 0;}
 };
 
-class Triangle : public Figurs{				
+class Triangle : public Figurs{				//трикутник
 public:
 	virtual double Square() { return 0; }
 	virtual double Perimeter() { return 0; }
 	virtual int Get() { return 0; }
 };
 
-class Square : public Figurs {				
+class Square : public Figurs {				//квадрати
 public:
 	virtual double Squares() {return 0;}
 	virtual double Perimeter(){return 0;}
 	virtual int Get() {return 0;}
 };						
 
-class Circle : public Figurs{				
+class Circle : public Figurs{				//круги
 public:
 	virtual int Get() {return 0;}
 	virtual double Long() {return 0;}
@@ -33,7 +37,7 @@ public:
 };			
 
 
-class Arbitrary : public Triangle{			
+class Arbitrary : public Triangle{			//довільний трикутник
 public:
 	
 	int Get()
@@ -59,7 +63,7 @@ private: double side1;
 		 double radius;
 };
 
-class Straight : public Triangle{			
+class Straight : public Triangle{			//прямокутний трикутник
 public:
 	double side1;
 	double side2;
@@ -74,7 +78,7 @@ public:
 };
 
 
-class Square_correct : public Square {		
+class Square_correct : public Square {			//квадрат
 public:
 	double side;
 	int Get(){
@@ -85,7 +89,7 @@ public:
 	double Perimeter(){return side*4;}
 };
 
-class Rectangle : public Square{			
+class Rectangle : public Square{			//прямокутник
 public:
 	double side1;
 	double side2;
@@ -96,7 +100,7 @@ public:
 	double Perimeter(){return (side1 * 2) + (side2 * 2);}
 };
 
-class Parallelogram : public Square{			
+class Parallelogram : public Square{			//паралелограм
 public:
 	double side1;
 	double side2;
@@ -111,7 +115,7 @@ public:
 	double Perimeter(){return (side1 * 2) + (side2 * 2);}
 };
 
-class Diamond : public Square{					
+class Diamond : public Square{				//ромб
 public:
 	double side1;
 	double side2; 
@@ -123,14 +127,14 @@ public:
 };
 
 
-class Round : public Circle {					
+class Round : public Circle {				//коло
 public:
 	double r;
 	int Get(){cout << "Введiть радіус : ";	cin >> r;return 0;}
 	double Long() {return 2 * r;}
 };
 
-class Ellipse : public Circle {					
+class Ellipse : public Circle {				//еліпс
 public:
 	double a,b;
 	int Get()
